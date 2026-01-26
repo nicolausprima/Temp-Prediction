@@ -42,9 +42,9 @@ Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metr
 
 | Model | Type | RMSE (Celsius) | Performance Analysis |
 | :--- | :--- | :--- | :--- |
-| **Holt-Winters** | Statistical | *[Insert HW RMSE]* | Captures annual seasonality well but is less responsive to daily fluctuations. |
-| **Prophet** | Automated | *[Insert Prophet RMSE]* | Stable, but tends to *underfit* during extreme weather changes. |
-| **XGBoost** | Machine Learning | **[Insert XGB RMSE]** | **Best Performance**. Lag features significantly helped the model predict temperature based on the previous days' context. |
+| **Holt-Winters** | Statistical | **[6.1588]** | Captures annual seasonality well but is less responsive to daily fluctuations. |
+| **Prophet** | Automated | **[3.4032]** | Stable, but tends to *underfit* during extreme weather changes. |
+| **XGBoost** | Machine Learning | **[0.4864]** | **Best Performance**. Lag features significantly helped the model predict temperature based on the previous days' context. |
 
 > *Note: A lower RMSE value indicates better prediction accuracy.*
 
