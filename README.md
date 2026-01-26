@@ -52,6 +52,7 @@ Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metr
 *(Best Model Performance: XGBoost with Lag Features)*
 
 ![Forecast Result](XGBoost.png)
+
 *The chart above illustrates the XGBoost prediction (Red) closely following the Actual trend (Blue) on the test data.*
 
 ## 🚀 How to Run
