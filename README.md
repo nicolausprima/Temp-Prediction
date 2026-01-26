@@ -20,7 +20,7 @@ The primary focus of this experiment is to demonstrate that a Machine Learning a
 The dataset used contains hourly weather data, including features such as temperature, humidity, wind speed, and pressure.
 
 * **Dataset Source:** Weather Dataset.
-* **Kaggle Link:** [👉 Click here to view Dataset on Kaggle](https://www.kaggle.com/datasets/muthuj7/weather-dataset)
+* **Kaggle Link:** 👉 [Click here to view Dataset on Kaggle](https://www.kaggle.com/datasets/muthuj7/weather-dataset)
 
 ## 🛠️ Methodology
 
@@ -51,7 +51,7 @@ Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metr
 ## 📈 Visualizations
 *(Best Model Performance: XGBoost with Lag Features)*
 
-![Forecast Result](forecast_result.png)
+![Forecast Result](XGBoost.png)
 *The chart above illustrates the XGBoost prediction (Red) closely following the Actual trend (Blue) on the test data.*
 
 ## 🚀 How to Run
