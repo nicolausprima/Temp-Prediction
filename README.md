@@ -8,69 +8,68 @@ A comparative time-series analysis predicting daily temperature using Holt-Winte
 [![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/)
 
 ## 📌 Project Overview
-Project ini bertujuan untuk memprediksi suhu harian (**Daily Temperature**) secara akurat menggunakan data historis cuaca. Analisis ini membandingkan efektivitas tiga pendekatan berbeda dalam *Time Series Forecasting*:
+The objective of this project is to accurately predict **Daily Temperature** based on historical weather data. This analysis compares the effectiveness of three different approaches in *Time Series Forecasting*:
 
 1.  **Statistical Method:** Holt-Winters Exponential Smoothing (Triple Exponential Smoothing).
 2.  **Automated Forecasting:** Facebook Prophet.
-3.  **Machine Learning:** XGBoost Regressor (dengan *Custom Feature Engineering*).
+3.  **Machine Learning:** XGBoost Regressor (enhanced with *Custom Feature Engineering*).
 
-Fokus utama eksperimen ini adalah membuktikan bahwa pendekatan Machine Learning dengan fitur "memori" (*Lag Features*) mampu mengungguli metode statistik tradisional dalam menangkap pola cuaca yang kompleks.
+The primary focus of this experiment is to demonstrate that a Machine Learning approach utilizing "memory" features (*Lag Features*) can outperform traditional statistical methods in capturing complex weather patterns.
 
 ## 📂 Dataset & Kaggle Code
-Dataset yang digunakan berisi data cuaca per jam (Hourly) yang mencakup fitur seperti suhu, kelembaban, kecepatan angin, dan tekanan udara.
+The dataset used contains hourly weather data, including features such as temperature, humidity, wind speed, and pressure.
 
-* **Sumber Dataset:** Weather History Dataset.
-* **Link Kaggle:** [👉 Klik disini untuk melihat Notebook/Dataset saya di Kaggle](LINK_KAGGLE_KAMU_DISINI)
-    *(Silakan ganti teks ini dengan link profil Kaggle atau link dataset kamu)*
+* **Dataset Source:** Weather Dataset.
+* **Kaggle Link:** [👉 Click here to view Dataset on Kaggle](https://www.kaggle.com/datasets/muthuj7/weather-dataset)
 
 ## 🛠️ Methodology
 
 ### 1. Data Preprocessing
-* **Resampling:** Mengubah data per jam (*hourly*) menjadi rata-rata harian (*daily*) untuk mengurangi noise dan fokus pada tren makro.
-* **Cleaning:** Menangani *missing values* dan konversi zona waktu (UTC).
+* **Resampling:** Converted *hourly* data into *daily* averages to reduce noise and focus on macro trends.
+* **Cleaning:** Handled missing values and performed UTC timezone conversion.
 * **Feature Engineering (XGBoost):**
-    * `Lag_1`, `Lag_2`, `Lag_7`: Menambahkan fitur suhu 1 hari, 2 hari, dan 1 minggu sebelumnya sebagai konteks.
-    * `Rolling_Mean`: Menambahkan tren rata-rata bergerak 3 harian.
+    * `Lag_1`, `Lag_2`, `Lag_7`: Added features representing the temperature from 1 day, 2 days, and 1 week prior to provide historical context.
+    * `Rolling_Mean`: Added a 3-day moving average trend.
 
 ### 2. Models Used
-* **Holt-Winters:** Dipilih karena kemampuannya menangani *Seasonality* (musiman tahunan) secara eksplisit.
-* **Prophet:** Digunakan sebagai pembanding otomatis yang tahan terhadap *outlier*.
-* **XGBoost:** Model *Gradient Boosting* yang di-tuning untuk mempelajari pola non-linear dari fitur historis (*lags*).
+* **Holt-Winters:** Selected for its ability to explicitly handle annual *Seasonality* and *Trend*.
+* **Prophet:** Used as an automated baseline that is robust against *outliers* and missing data.
+* **XGBoost:** A *Gradient Boosting* model tuned to learn non-linear patterns from the historical lag features.
 
 ## 📊 Results Comparison
 
-Evaluasi model dilakukan menggunakan metrik **Root Mean Squared Error (RMSE)**. Berikut adalah hasil eksperimen:
+Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metric. Below are the experimental results:
 
-| Model | Type | RMSE (Celcius) | Performance Analysis |
+| Model | Type | RMSE (Celsius) | Performance Analysis |
 | :--- | :--- | :--- | :--- |
-| **Holt-Winters** | Statistik | *[Nilai RMSE HW]* | Cukup baik menangkap pola tahunan, namun kurang responsif pada fluktuasi harian. |
-| **Prophet** | Automated | *[Nilai RMSE Prophet]* | Stabil, namun cenderung *underfitting* pada perubahan cuaca ekstrem. |
-| **XGBoost** | Machine Learning | **[Nilai RMSE XGB]** | **Best Performance**. Fitur *Lag* sangat membantu model memprediksi suhu berdasarkan konteks hari sebelumnya. |
+| **Holt-Winters** | Statistical | *[Insert HW RMSE]* | Captures annual seasonality well but is less responsive to daily fluctuations. |
+| **Prophet** | Automated | *[Insert Prophet RMSE]* | Stable, but tends to *underfit* during extreme weather changes. |
+| **XGBoost** | Machine Learning | **[Insert XGB RMSE]** | **Best Performance**. Lag features significantly helped the model predict temperature based on the previous days' context. |
 
-> *Semakin kecil nilai RMSE, semakin akurat prediksi model.*
+> *Note: A lower RMSE value indicates better prediction accuracy.*
 
 ## 📈 Visualizations
 *(Best Model Performance: XGBoost with Lag Features)*
 
-![Forecast Result](link_gambar_grafik_xgboost_kamu.png)
-*Grafik di atas menunjukkan hasil prediksi XGBoost (Merah) yang mampu mengikuti tren data Aktual (Biru) dengan sangat rapat pada data uji.*
+![Forecast Result](forecast_result.png)
+*The chart above illustrates the XGBoost prediction (Red) closely following the Actual trend (Blue) on the test data.*
 
 ## 🚀 How to Run
-1.  Clone repository ini:
+1.  Clone this repository:
     ```bash
-    git clone [https://github.com/username-kamu/weather-forecasting.git](https://github.com/username-kamu/weather-forecasting.git)
+    git clone [https://github.com/your-username/weather-forecasting.git](https://github.com/your-username/weather-forecasting.git)
     ```
-2.  Install library yang dibutuhkan:
+2.  Install the required libraries:
     ```bash
     pip install pandas numpy matplotlib seaborn scikit-learn xgboost statsmodels prophet
     ```
-3.  Jalankan notebook:
+3.  Run the notebook:
     ```bash
     jupyter notebook TempPrediction.ipynb
     ```
 
 ## 🤝 Conclusion
-Dari eksperimen ini, disimpulkan bahwa **XGBoost** dengan *Feature Engineering* yang tepat (Lag & Rolling Window) memberikan hasil prediksi yang paling akurat dibandingkan metode statistik murni. Hal ini menunjukkan pentingnya *contextual features* dalam pemodelan Machine Learning untuk data deret waktu (*time-series*).
+This experiment concludes that **XGBoost** combined with proper *Feature Engineering* (Lag & Rolling Window) yields the most accurate predictions compared to pure statistical methods. This highlights the importance of *contextual features* when applying Machine Learning to time-series data.
 
 ---
-*Created by [Nama Kamu]*
+*Created by [Your Name]*
