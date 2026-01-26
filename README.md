@@ -73,4 +73,4 @@ Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metr
 This experiment concludes that **XGBoost** combined with proper *Feature Engineering* (Lag & Rolling Window) yields the most accurate predictions compared to pure statistical methods. This highlights the importance of *contextual features* when applying Machine Learning to time-series data.
 
 ---
-*Created by [Your Name]*
+*Created by [Nicolaus Prima Dharma]*
