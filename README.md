@@ -58,7 +58,7 @@ Model evaluation was conducted using the **Root Mean Squared Error (RMSE)** metr
 ## 🚀 How to Run
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/your-username/weather-forecasting.git](https://github.com/your-username/weather-forecasting.git)
+    git clone [https://github.com/nicolausprima/weather-forecasting.git](https://github.com/nicolausprima/weather-forecasting.git)
     ```
 2.  Install the required libraries:
     ```bash
